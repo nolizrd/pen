@@ -10,4 +10,4 @@ for i in range(1, 13):
     binary = image < threshold_otsu(image) * 1.1
     labeled = label(binary_closing(binary, np.ones((20, 20), np.uint8)))
     sum_pen += sum((region.major_axis_length > 2965) and(region.minor_axis_length>130) for region in regionprops(labeled))
-print(sum_pen)
+print(f"Суммарное количество карандашей:{sum_pen}")
